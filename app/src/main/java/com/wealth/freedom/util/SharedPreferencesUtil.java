@@ -21,14 +21,12 @@ import java.util.Set;
 public class SharedPreferencesUtil {
     private SharedPreferences sp;
     private Editor editor;
-    private Context context;
     private String name = "freedom";
     private int mode = Context.MODE_PRIVATE;
 
     public SharedPreferencesUtil(Context context) {
         this.sp = context.getSharedPreferences(name, mode);
         this.editor = sp.edit();
-        this.context = context;
     }
 
     /**
@@ -41,7 +39,6 @@ public class SharedPreferencesUtil {
     public SharedPreferencesUtil(Context context, String name, int mode) {
         this.sp = context.getSharedPreferences(name, mode);
         this.editor = sp.edit();
-        this.context = context;
     }
 
     /**
@@ -110,7 +107,6 @@ public class SharedPreferencesUtil {
      * @param object
      */
     public void setObject(String key, Object object) {
-        SharedPreferences sp = this.context.getSharedPreferences(this.name, Context.MODE_PRIVATE);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream out = null;
         try {
@@ -143,7 +139,6 @@ public class SharedPreferencesUtil {
      * @return
      */
     public <T> T getObject(String key) {
-        SharedPreferences sp = this.context.getSharedPreferences(this.name, Context.MODE_PRIVATE);
         if (sp.contains(key)) {
             String objectVal = sp.getString(key, null);
             byte[] buffer = Base64.decode(objectVal, Base64.DEFAULT);
