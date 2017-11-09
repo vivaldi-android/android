@@ -15,9 +15,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by Auser on 2017/11/9.
+ * @author:  vivaldi
+ * Time:  2017/11/9 0009
+ * Describe: 跟App相关的辅助类
  */
-
 public class SharedPreferencesUtil {
     private SharedPreferences sp;
     private Editor editor;

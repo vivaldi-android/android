@@ -9,7 +9,7 @@ import android.view.View;
 import com.wealth.freedom.newwidget.TextInputLayoutActivity;
 
 /**
- * Author:  captain
+ * @author:  captain
  * Time:  2017/11/9 0009
  * Describe:
  */

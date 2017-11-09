@@ -7,7 +7,7 @@ import android.content.Context;
 import java.util.Stack;
 
 /**
- * Author:  captain
+ * @author:  captain
  * Time:  2017/11/8 0008
  * Describe: activity的进栈退栈管理
  */

@@ -4,8 +4,12 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+/**
+ * @author:  vivaldi
+ * Time:  2017/11/8 0008
+ * Describe: 跟App相关的辅助类
+ */
 
-//跟App相关的辅助类
 public class AppUtils {
 
     private AppUtils() {

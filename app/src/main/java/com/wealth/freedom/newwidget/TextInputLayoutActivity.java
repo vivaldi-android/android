@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.wealth.freedom.casualname.R;
 
 /**
- * Author:  captain
+ * @author:  captain
  * Time:  2017/11/9 0009
  * Describe:
  */
