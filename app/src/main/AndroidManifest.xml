@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".NewWidgetActivity"/>
+        <activity android:name="com.wealth.freedom.newwidget.TextInputLayoutActivity"/>
     </application>
 
 </manifest>
