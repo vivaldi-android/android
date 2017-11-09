@@ -9,7 +9,6 @@ import android.content.pm.PackageManager.NameNotFoundException;
  * Time:  2017/11/8 0008
  * Describe: 跟App相关的辅助类
  */
-
 public class AppUtils {
 
     private AppUtils() {
@@ -29,7 +28,7 @@ public class AppUtils {
             int labelRes = packageInfo.applicationInfo.labelRes;
             return context.getResources().getString(labelRes);
         } catch (NameNotFoundException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return null;
     }
@@ -48,7 +47,7 @@ public class AppUtils {
             return packageInfo.versionName;
 
         } catch (NameNotFoundException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return null;
     }

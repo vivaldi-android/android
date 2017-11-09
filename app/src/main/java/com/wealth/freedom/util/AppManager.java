@@ -16,6 +16,8 @@ public class AppManager {
     private Stack<Activity> activities;
 
     public AppManager() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
     }
 
     /**
