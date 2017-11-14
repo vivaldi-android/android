@@ -4,10 +4,8 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+
 /**
- * @author:  vivaldi
- * Time:  2017/11/8 0008
- * Describe: 跟App相关的辅助类
  */
 public class AppUtils {
 
@@ -52,4 +50,20 @@ public class AppUtils {
         return null;
     }
 
+    /**
+     * [获取应用程序版本versionCode]
+     *
+     * @param context
+     * @return
+     */
+    public static Integer getVersionCode(Context context) {
+        int versionCode = 0;
+        try {
+            versionCode = context.getPackageManager().getPackageInfo(
+                    context.getPackageName(), 0).versionCode;
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return versionCode;
+    }
 }
