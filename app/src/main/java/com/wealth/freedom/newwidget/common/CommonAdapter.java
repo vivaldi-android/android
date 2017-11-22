@@ -17,8 +17,8 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder> 
     protected int mLayoutId;
     protected List<T> mDatas;
     protected LayoutInflater mInflater;
-    public CommonAdapter(Context context, int layoutId, List<T> datas)
-    {
+
+    public CommonAdapter(Context context, int layoutId, List<T> datas) {
         mContext = context;
         mInflater = LayoutInflater.from(context);
         mLayoutId = layoutId;
@@ -26,23 +26,26 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder> 
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType)
-    {
+    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         ViewHolder viewHolder = ViewHolder.get(mContext, parent, mLayoutId);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position)
-    {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         convert(holder, mDatas.get(position));
     }
 
+    /**
+     * 业务实现的回调方法
+     *
+     * @param holder
+     * @param t
+     */
     public abstract void convert(ViewHolder holder, T t);
 
     @Override
-    public int getItemCount()
-    {
+    public int getItemCount() {
         return mDatas.size();
     }
 }
