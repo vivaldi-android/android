@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TextView;
 
 import com.wealth.freedom.casualname.R;
 import com.wealth.freedom.newwidget.common.CommonAdapter;
 import com.wealth.freedom.newwidget.common.ViewHolder;
+import com.wealth.freedom.util.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ import java.util.List;
 public class RecyclerViewActivity2 extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private List<String> mList;
-
+    private CommonAdapter<String> mAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +40,23 @@ public class RecyclerViewActivity2 extends AppCompatActivity {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mRecyclerView.setLayoutManager(linear);
         getData();
-        mRecyclerView.setAdapter(new CommonAdapter<String>(this, R.layout.item_1, mList) {
+        mAdapter = new CommonAdapter<String>(this, R.layout.item_1, mList) {
             @Override
             public void convert(ViewHolder holder, String s) {
                 TextView txt = holder.getView(R.id.txt);
                 txt.setText(s);
+            }
+        };
+       mRecyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(new CommonAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+                ToastUtils.showShort(RecyclerViewActivity2.this,mList.get(position));
+            }
+
+            @Override
+            public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
+                return false;
             }
         });
     }
