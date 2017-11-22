@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.wealth.freedom.newwidget.RecyclerViewActivity;
 import com.wealth.freedom.newwidget.TextInputLayoutActivity;
 
 /**
@@ -22,5 +23,9 @@ public class NewWidgetActivity extends AppCompatActivity {
 
     public void inputLayout(View view){
         startActivity(new Intent(this, TextInputLayoutActivity.class));
+    }
+
+    public void recycler(View view){
+        startActivity(new Intent(this, RecyclerViewActivity.class));
     }
 }

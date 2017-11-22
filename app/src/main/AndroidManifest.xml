@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".NewWidgetActivity"/>
         <activity android:name="com.wealth.freedom.newwidget.TextInputLayoutActivity"/>
+        <activity android:name="com.wealth.freedom.newwidget.RecyclerViewActivity"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
