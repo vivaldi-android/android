@@ -45,6 +45,12 @@ public class RecyclerViewActivity2 extends AppCompatActivity {
             public void convert(ViewHolder holder, String s) {
                 TextView txt = holder.getView(R.id.txt);
                 txt.setText(s);
+                holder.setOnClickListener(R.id.txt2, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ToastUtils.showShort(RecyclerViewActivity2.this,"EveryThing is");
+                    }
+                });
             }
         };
        mRecyclerView.setAdapter(mAdapter);
