@@ -29,6 +29,12 @@
                 android:onClick="recycler"
                 android:text="RecyclerView"
                 />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="recycler2"
+                android:text="RecyclerView通用ViewHolder"
+                />
         </LinearLayout>
 
     </ScrollView>

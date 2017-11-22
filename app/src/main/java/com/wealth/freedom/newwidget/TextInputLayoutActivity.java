@@ -10,12 +10,13 @@ import android.widget.Toast;
 import com.wealth.freedom.casualname.R;
 
 /**
- * @author:  captain
+ * @author: captain
  * Time:  2017/11/9 0009
  * Describe:
  */
 public class TextInputLayoutActivity extends AppCompatActivity {
-    private TextInputLayout usernameWrapper,passwordWrapper;
+    private TextInputLayout usernameWrapper, passwordWrapper;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,20 +24,21 @@ public class TextInputLayoutActivity extends AppCompatActivity {
         usernameWrapper = (TextInputLayout) findViewById(R.id.usernameWrapper);
         passwordWrapper = (TextInputLayout) findViewById(R.id.passwordWrapper);
     }
-    public void login(View view){
+
+    public void login(View view) {
         String username = usernameWrapper.getEditText().getText().toString();
         String password = passwordWrapper.getEditText().getText().toString();
-        if(!username.equals("captain")){
+        if (!username.equals("captain")) {
             usernameWrapper.setError("请输入正确的账号");
             return;
         }
-        if(password.length()<=3||password.length()>=10){
+        if (password.length() <= 3 || password.length() >= 10) {
             passwordWrapper.setError("密码格式不对");
             return;
         }
         usernameWrapper.setErrorEnabled(false);
         passwordWrapper.setErrorEnabled(false);
-        Toast.makeText(TextInputLayoutActivity.this,"登陆成功",Toast.LENGTH_SHORT).show();
+        Toast.makeText(TextInputLayoutActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
 
     }
 }
