@@ -26,6 +26,7 @@ public class RecyclerViewActivity2 extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private List<String> mList;
     private CommonAdapter<String> mAdapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,11 +48,11 @@ public class RecyclerViewActivity2 extends AppCompatActivity {
                 txt.setText(s);
             }
         };
-       mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new CommonAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
-                ToastUtils.showShort(RecyclerViewActivity2.this,mList.get(position));
+                ToastUtils.showShort(RecyclerViewActivity2.this, mList.get(position));
             }
 
             @Override

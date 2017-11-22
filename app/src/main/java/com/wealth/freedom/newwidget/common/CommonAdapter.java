@@ -30,7 +30,7 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         ViewHolder viewHolder = ViewHolder.createViewHolder(mContext, parent, mLayoutId);
-        setListener(parent, viewHolder);
+        setListener(viewHolder);
         return viewHolder;
     }
 
@@ -47,7 +47,7 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder> 
      */
     public abstract void convert(ViewHolder holder, T t);
 
-    public void setListener(final ViewGroup parent, final ViewHolder viewHolder) {
+    public void setListener(final ViewHolder viewHolder) {
         viewHolder.getConvertView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,8 +76,23 @@ public abstract class CommonAdapter<T> extends RecyclerView.Adapter<ViewHolder> 
     }
 
     public interface OnItemClickListener {
+        /**
+         * item点击事件
+         *
+         * @param view
+         * @param holder
+         * @param position
+         */
         void onItemClick(View view, RecyclerView.ViewHolder holder, int position);
 
+        /**
+         * item长按点击事件
+         *
+         * @param view
+         * @param holder
+         * @param position
+         * @return
+         */
         boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position);
     }
 
